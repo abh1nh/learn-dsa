@@ -1,5 +1,10 @@
-import Button from '@mui/material/Button';
+import React from 'react';
 
-export default function ButtonUsage() {
-  return <Button> </Button>;
+const Button = ({className, text, onClick}) => {
+    return(
+        <button className={className} onClick={onClick}>
+        {text}
+        </button> 
+    );
 }
+export default Button;

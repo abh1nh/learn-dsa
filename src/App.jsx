@@ -1,13 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import Home from './Home'
+import ArraysPage from "./components/Arrays";
+
 
 function App() {
   return (
+  <BrowserRouter> 
     <div className="App">
-      <div> <Home/> </div>
+        <Routes> 
+          <Route path='/' element={<Home />} />
+          <Route path="/arrays" element={<ArraysPage />} />
+        </Routes>
     </div>
+  </BrowserRouter>
   );
 }
 

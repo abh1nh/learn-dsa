@@ -1,0 +1,11 @@
+.homePageButton{
+    background-color: white;
+    color: black;
+    padding: 12px 24px;
+    font-weight: 550;
+    font-size: 32px;
+    border-color: grey;
+    border-width: 20px;
+    cursor: pointer;
+  
+}

@@ -3,8 +3,26 @@ import CardNav from './components/CardNav'
 import logo from './logo.svg';
 import TextType from "./components/Title";
 import Particles from "./components/LandingPageBackground";
-import ButtonUsage from "./components/Button";
+import Button from "./components/Button";
+import './components/Button.css'
+import { useNavigate } from 'react-router-dom';
+import Roadmap from "./components/Roadmap";
+
 function Home() {
+  const navigate = useNavigate();
+  const navigateHandleClick = () => {
+    navigate('/arrays');
+  }
+  function handleClick(link){
+    return window.open(link)
+  };
+
+  const roadmapSteps = [
+    {title: "Arrays", description: "An array is a data structure that stores a collection of elements, typically of the same data type, in a single variable.", date: "Nov 9"},
+    {title: "Stacks", description: "A stack can refer to a data structure in computer science that operates on a last-in, first-out (LIFO) principle, like a stack of plates.", date: "Nov 10"},
+    {title: "Queues", description: "A queue in data structures is a linear data structure that follows the First-In-First-Out (FIFO) principle.", date: "Nov 11"},
+    {title: "LinkedList", description: "A linked list is a linear data structure made of nodes that contain data and a pointer to the next node, unlike arrays where elements are stored contiguously.", date: "Nov 12"}
+  ]
 
     const items = [
 
@@ -65,6 +83,7 @@ function Home() {
     }
 
   ];
+ 
 
 
   return (
@@ -122,7 +141,11 @@ function Home() {
       showCursor={true}
       cursorCharacter="|"
       />
-      <ButtonUsage />
+      {/* <Button className={"homePageButton"} text={"Arrays Page"} onClick={navigateHandleClick} /> */}
+      <Button className="homePageButton" text={"Get Started"} onClick={() => handleClick('https://youtube.com')} />
+      <h1 style={{ textAlign: "center", marginTop: "40px" }}>My Learning Roadmap</h1>
+      <Roadmap steps={roadmapSteps} />
+    
 </div>
       
 
